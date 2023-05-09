@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Shit.Data\Shit.Data.csproj" />
+      <ProjectReference Include="..\Shit.Tools\Shit.Tools.csproj" />
+    </ItemGroup>
+
+</Project>
