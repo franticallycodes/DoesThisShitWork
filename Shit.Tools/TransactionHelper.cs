@@ -8,13 +8,13 @@ public static class TransactionHelper
 	{
 		var options = new TransactionOptions
 		{
-			IsolationLevel = isolationLevel ?? IsolationLevel.Serializable, // ReadCommitted? Chaos?
-			Timeout = timeout ?? TransactionManager.DefaultTimeout // MaximumTimeout?
+			IsolationLevel = isolationLevel ?? IsolationLevel.Serializable,
+			Timeout = timeout ?? TransactionManager.DefaultTimeout
 		};
-		var scope = new TransactionScope(TransactionScopeOption.Required, options, TransactionScopeAsyncFlowOption.Enabled);
+		var scope = new TransactionScope(TransactionScopeOption.RequiresNew, options, TransactionScopeAsyncFlowOption.Enabled);
 
-		TransactionManager.ImplicitDistributedTransactions = true;
-		TransactionInterop.GetTransmitterPropagationToken(Transaction.Current);
+//		TransactionManager.ImplicitDistributedTransactions = true;
+//		TransactionInterop.GetTransmitterPropagationToken(Transaction.Current);
 		return scope;
 	}
 

@@ -24,7 +24,8 @@ public class TransactionTestController : ControllerBase
 		using var timer = ShitTimer();
 		using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
 		await _stall.PoopAsync();
-		scope.Complete();FlushThatLog();
+		scope.Complete();
+		FlushThatLog();
 		return Ok();
 	}
 
